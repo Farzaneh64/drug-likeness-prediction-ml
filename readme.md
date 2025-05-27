@@ -74,30 +74,30 @@ A simple web interface to paste a SMILES string and view drug-likeness predictio
 
 
 📁 Project Structure
-
-drug-likeness-prediction-ml/
-│
-├── data/                     # Raw & processed CSV datasets
-│   ├── cleaned_drugs_chembl.csv
-│   ├── cleaned_decoys_dude.csv
-│   └── drug_likeness_dataset.csv
-│
-├── notebooks/                # Jupyter notebooks for EDA & prototyping
-│   └── 01_model_training.ipynb
-│
-├── src/                      # Python scripts
-│   ├── descriptors.py        # Compute RDKit descriptors
-│   ├── model.py              # Train & evaluate the ML model
-│   └── predict.py            # Predict on new SMILES
-│
-├── app/                      # Streamlit app for interactive demo
-│   └── streamlit_app.py
-│
-├── models/                   # Saved models (e.g. .joblib files)
-│
-├── requirements.txt          # Python dependencies
-├── .gitignore                # Excluded files/folders
-└── README.md                 # Project overview & instructions
+   ```bash
+   drug-likeness-prediction-ml/
+   │
+   ├── data/                     # Raw & processed CSV datasets
+   │   ├── cleaned_drugs_chembl.csv
+   │   ├── cleaned_decoys_dude.csv
+   │   └── drug_likeness_dataset.csv
+   │
+   ├── notebooks/                # Jupyter notebooks for EDA & prototyping
+   │   └── 01_model_training.ipynb
+   │
+   ├── src/                      # Python scripts
+   │   ├── descriptors.py        # Compute RDKit descriptors
+   │   ├── model.py              # Train & evaluate the ML model
+   │   └── predict.py            # Predict on new SMILES
+   │
+   ├── app/                      # Streamlit app for interactive demo
+   │   └── streamlit_app.py
+   │
+   ├── models/                   # Saved models (e.g. .joblib files)
+   │
+   ├── requirements.txt          # Python dependencies
+   ├── .gitignore                # Excluded files/folders
+   └── README.md                 # Project overview & instructions
 
 📜 License
 This project and its bundled datasets are released under CC BY-SA 4.0.
