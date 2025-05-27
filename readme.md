@@ -1,4 +1,4 @@
-# Drug-Likeness Prediction ML
+# 🔬💊 Drug-Likeness Prediction ML
 
 **ML-powered pipeline for predicting drug-likeness of small molecules from 2D descriptors.**
 
