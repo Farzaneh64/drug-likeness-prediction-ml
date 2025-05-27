@@ -1,1 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# IDE settings
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Data files (if you ever add large raw data here)
+# Uncomment the next line to ignore everything in data/raw
+# data/raw/*
+
+# Model artifacts
+models/*.joblib
+models/*.pkl
+
+# Streamlit cache
+.streamlit/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# pytest cache
+.pytest_cache/
