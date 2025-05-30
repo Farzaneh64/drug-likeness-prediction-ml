@@ -31,7 +31,7 @@ All dataset files live in the `data/` folder. We include:
 
 1. Clone the repo  
    ```bash
-   git clone https://github.com/<Farzaneh64>/drug-likeness-prediction-ml.git
+   git clone https://github.com/Farzaneh64/drug-likeness-prediction-ml.git
    cd drug-likeness-prediction-ml
    
 2. Create & activate a virtual environment
