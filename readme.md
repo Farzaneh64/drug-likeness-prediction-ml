@@ -67,7 +67,7 @@ All dataset files live in the `data/` folder. We include:
    --output predictions.csv
   Loads the trained model, featurizes new SMILES, and outputs predicted labels and probabilities.
 
-4. Launch the Streamlit Demo (Optional)
+4. Launch the Streamlit Demo 
    ```bash
    streamlit run app/streamlit_app.py
   A simple web interface to paste a SMILES string and view drug-likeness predictions interactively.
