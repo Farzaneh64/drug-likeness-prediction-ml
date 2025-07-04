@@ -78,27 +78,46 @@ All dataset files live in the `data/` folder. We include:
     ```bash
     drug-likeness-prediction-ml/
     │
-    ├── data/                     # Raw & processed CSV datasets
+    ├── data/                                   # Raw & processed CSV datasets
     │   ├── cleaned_drugs_chembl.csv
     │   ├── cleaned_decoys_dude.csv
-    │   └── drug_likeness_dataset.csv
+    │   ├── drug_likeness_dataset.csv
+    │   └── external_validation_set.csv
     │
-    ├── notebooks/                # Jupyter notebooks for EDA & prototyping
+    ├── notebooks/                              # Jupyter notebooks for EDA & prototyping
     │   └── 01_model_training.ipynb
     │
-    ├── src/                      # Python scripts
-    │   ├── descriptors.py        # Compute RDKit descriptors
-    │   ├── model.py              # Train & evaluate the ML model
-    │   └── predict.py            # Predict on new SMILES
+    ├── src/                                    # Python scripts
+    │   ├── __init__.py                         # Compute RDKit descriptors
+    |   ├── config.py                           # Compute RDKit descriptors
+    │   ├── descriptors.py                      # Train & evaluate the ML model
+    │   ├── model.py                            # Predict on new SMILES
+    │   ├── predict.py                          # Compute RDKit descriptors
+    │   ├── run_all.py                          # Train & evaluate the ML model
+    │   └── utils.py                            # Predict on new SMILES
+    |
+    ├── models/
+    │   └── rf_drug_likeness_model.joblib       # Predict on new SMILES
     │
-    ├── app/                      # Streamlit app for interactive demo
+    ├── outputs/                                # Streamlit app for interactive demo
+    │   ├── calibration.png                         # Compute RDKit descriptors
+    |   ├── external_metrics.csv                          # Compute RDKit descriptors
+    │   ├── external_predictions.csv                     # Train & evaluate the ML model
+    │   ├── predictions.csv                            # Predict on new SMILES
+    │   ├── test_metrics.csv                          # Compute RDKit descriptors
+    │   └── train_metrics.json                        # Train & evaluate the ML model
+    │
+    ├── validation/                             # Saved models (e.g. .joblib files)
+    |   ├── calibrate.py                        # Compute RDKit descriptors
+    │   ├── external_validation.py              # Train & evaluate the ML model
+    │   └── feature_importance.py               # Predict on new SMILES
+    │
+    ├── app/                                    # Streamlit app for interactive demo
     │   └── streamlit_app.py
     │
-    ├── models/                   # Saved models (e.g. .joblib files)
-    │ 
-    ├── requirements.txt          # Python dependencies
-    ├── .gitignore                # Excluded files/folders
-    └── README.md                 # Project overview & instructions
+    ├── requirements.txt                        # Python dependencies
+    ├── .gitignore                              # Excluded files/folders
+    └── README.md                               # Project overview & instructions
     
 ## 📜 License
 
