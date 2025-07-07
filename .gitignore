@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
 # Virtual environments
 venv/
 env/
@@ -22,13 +19,11 @@ env/
 # Logs
 *.log
 
-# Data files (if you ever add large raw data here)
-# Uncomment the next line to ignore everything in data/raw
+# Data files 
 # data/raw/*
 
 # Model artifacts
 models/*.joblib
-models/*.pkl
 
 # Streamlit cache
 .streamlit/
