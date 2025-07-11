@@ -73,44 +73,59 @@ All dataset files live in the `data/` folder. We include:
   A simple web interface to paste a SMILES string and view drug-likeness predictions interactively.
 
 
+## 🚀 End-to-End Pipeline
+For a one-command run of the full workflow—from raw data to final outputs—use:
+    ```bash
+    python src/run_all.py 
+
+This script will automatically:
+
+Load and preprocess all raw CSVs in data/.
+
+Compute RDKit descriptors.
+
+Train the Random Forest model with class-weight balancing.
+
+Evaluate on both the test set and your external validation set.
+
+Emit metrics, plots, and prediction files into the outputs/ folder.
+
+
 ## 📁 Project Structure
    
     ```bash
     drug-likeness-prediction-ml/
     │
     ├── data/                                   # Raw & processed CSV datasets
-    │   ├── cleaned_drugs_chembl.csv
-    │   ├── cleaned_decoys_dude.csv
-    │   ├── drug_likeness_dataset.csv
-    │   └── external_validation_set.csv
+    │   ├── cleaned_drugs_chembl.csv            # ChEMBL-derived drug structures, cleaned
+    │   ├── cleaned_decoys_dude.csv             # DUDE-E decoy structures, cleaned
+    │   ├── drug_likeness_dataset.csv           # Combined dataset of actives and decoys
+    │   └── external_validation_set.csv         # Hold-out set for external validation
     │
-    ├── notebooks/                              # Jupyter notebooks for EDA & prototyping
-    │   └── 01_model_training.ipynb
-    │
-    ├── src/                                    # Python scripts
-    │   ├── __init__.py                         # Compute RDKit descriptors
-    |   ├── config.py                           # Compute RDKit descriptors
-    │   ├── descriptors.py                      # Train & evaluate the ML model
-    │   ├── model.py                            # Predict on new SMILES
-    │   ├── predict.py                          # Compute RDKit descriptors
-    │   ├── run_all.py                          # Train & evaluate the ML model
-    │   └── utils.py                            # Predict on new SMILES
+    ├── src/                                    # Source Python modules and scripts
+    │   ├── __init__.py                         # Package initializer
+    |   ├── config.py                           # Configuration (paths, parameters)
+    │   ├── descriptors.py                      # Functions to compute RDKit molecular descriptors
+    │   ├── train_model.py                      # Model training and evaluation routines
+    │   ├── predict.py                          # Script for making predictions on new SMILES
+    │   ├── run_all.py                          # End-to-end pipeline: data prep, training, evaluation
+    │   └── utils.py                            # Helper functions (I/O, preprocessing)
     |
-    ├── models/
-    │   └── rf_drug_likeness_model.joblib       # Predict on new SMILES
+    ├── models/                                 # Trained model artifacts
+    │   └── rf_drug_likeness_model.joblib       # Uploaded on HUGGING fACE
     │
-    ├── outputs/                                # Streamlit app for interactive demo
-    │   ├── calibration.png                         # Compute RDKit descriptors
-    |   ├── external_metrics.csv                          # Compute RDKit descriptors
-    │   ├── external_predictions.csv                     # Train & evaluate the ML model
-    │   ├── predictions.csv                            # Predict on new SMILES
-    │   ├── test_metrics.csv                          # Compute RDKit descriptors
-    │   └── train_metrics.json                        # Train & evaluate the ML model
+    ├── outputs/                                # Generated outputs (figures, metrics, predictions)
+    │   ├── calibration.png                     # Calibration plot for model probabilities
+    |   ├── external_metrics.csv                # Metrics from external validation
+    │   ├── external_predictions.csv            # Predicted labels on external validation set
+    │   ├── predictions.csv                     # Predicted labels on test set
+    │   ├── test_metrics.csv                    # Performance metrics on test set
+    │   └── train_metrics.json                  # Training performance statistics
     │
-    ├── validation/                             # Saved models (e.g. .joblib files)
-    |   ├── calibrate.py                        # Compute RDKit descriptors
-    │   ├── external_validation.py              # Train & evaluate the ML model
-    │   └── feature_importance.py               # Predict on new SMILES
+    ├── validation/                             # Scripts for calibration and validation analyses
+    |   ├── calibrate.py                        # Generate and evaluate calibration curves
+    │   ├── external_validation.py              # Run and assess external validation experiments
+    │   └── feature_importance.py               # Plot and report feature importance
     │
     ├── app/                                    # Streamlit app for interactive demo
     │   └── streamlit_app.py
