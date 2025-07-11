@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Feature Importance: Plot top N descriptors from trained RF model
 """
