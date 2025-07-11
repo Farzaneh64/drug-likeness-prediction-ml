@@ -19,7 +19,6 @@ from descriptors import compute_descriptors
 from model import train_model
 from predict import predict
 
-
 def main():
     # Paths from config
     ds_input         = defaults['RAW_DATASET']
