@@ -38,7 +38,7 @@ All dataset files live in the `data/` folder. We include:
    ```bash
    python3 -m venv venv
    source venv/bin/activate    # macOS/Linux
-   venv\Scripts\activate     # Windows
+   venv\Scripts\activate       # Windows
 3. Install dependencies
    ```bash
    pip install -r requirements.txt
@@ -75,25 +75,20 @@ All dataset files live in the `data/` folder. We include:
 
 ## 🚀 End-to-End Pipeline
 For a one-command run of the full workflow—from raw data to final outputs—use:
-    ```bash
+  ```bash
     python src/run_all.py 
-
-This script will automatically:
-
+  ```
+This script will automatically: 
 Load and preprocess all raw CSVs in data/.
-
 Compute RDKit descriptors.
-
 Train the Random Forest model with class-weight balancing.
-
 Evaluate on both the test set and your external validation set.
-
 Emit metrics, plots, and prediction files into the outputs/ folder.
 
 
 ## 📁 Project Structure
    
-    ```bash
+  ```bash
     drug-likeness-prediction-ml/
     │
     ├── data/                                   # Raw & processed CSV datasets
@@ -133,7 +128,7 @@ Emit metrics, plots, and prediction files into the outputs/ folder.
     ├── requirements.txt                        # Python dependencies
     ├── .gitignore                              # Excluded files/folders
     └── README.md                               # Project overview & instructions
-    
+  ```
 ## 📜 License
 
 This project and its bundled datasets are released under CC BY-SA 4.0.
