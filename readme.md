@@ -73,7 +73,7 @@ All dataset files live in the `data/` folder. We include:
   A simple web interface to paste a SMILES string and view drug-likeness predictions interactively.
 
 
-## 🚀 End-to-End Pipeline
+## 🔄 End-to-End Pipeline
 For a one-command run of the full workflow—from raw data to final outputs—use:
   ```bash
     python src/run_all.py 
